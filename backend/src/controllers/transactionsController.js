@@ -78,6 +78,12 @@ export async function getSummaryByUserId(req, res) {
       WHERE user_id = ${userId} AND amount < 0
     `;
 
+    console.log("Summary Results:", {
+      balance: balanceResult,
+      income: incomeResult,
+      expenses: expensesResult,
+    });
+
     res.status(200).json({
       balance: balanceResult[0].balance,
       income: incomeResult[0].income,
